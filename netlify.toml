@@ -3,6 +3,21 @@
   command = "npm install"
 
 [[redirects]]
+  from = "/socket.io/*"
+  to = "https://your-render-app-url.onrender.com/socket.io/:splat"
+  status = 200
+  force = true
+  [redirects.headers]
+    Connection = "upgrade"
+    Upgrade = "websocket"
+
+[[redirects]]
+  from = "/peerjs/*"
+  to = "https://your-render-app-url.onrender.com/peerjs/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
@@ -17,4 +32,4 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self' https://cdnjs.cloudflare.com https://cdn.socket.io; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://cdn.socket.io; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: https:; media-src 'self' blob:; connect-src 'self' wss: https:;" 
+    Content-Security-Policy = "default-src 'self' https://cdnjs.cloudflare.com https://cdn.socket.io https://your-render-app-url.onrender.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://cdn.socket.io https://your-render-app-url.onrender.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: https:; media-src 'self' blob:; connect-src 'self' wss: https: wss://your-render-app-url.onrender.com;" 

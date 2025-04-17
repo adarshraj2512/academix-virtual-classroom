@@ -1,10 +1,29 @@
 const express = require('express');
 const app = express();
 const http = require('http').createServer(app);
-const io = require('socket.io')(http);
+const io = require('socket.io')(http, {
+    cors: {
+        origin: "*",
+        methods: ["GET", "POST"]
+    }
+});
 const path = require('path');
+const cors = require('cors');
+const { ExpressPeerServer } = require('peer');
 
+// Enable CORS
+app.use(cors());
+
+// Serve static files
 app.use(express.static(path.join(__dirname, '.')));
+
+// Set up PeerJS server
+const peerServer = ExpressPeerServer(http, {
+    debug: true,
+    path: '/peerjs'
+});
+
+app.use('/peerjs', peerServer);
 
 // Store active rooms and their participants
 const rooms = new Map();
