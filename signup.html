@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Academix Virtual Classroom</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .signup-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .signup-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .form-group input {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .signup-btn {
+            background-color: #2ecc71;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .signup-btn:hover {
+            background-color: #27ae60;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .login-link a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="signup-container">
+            <h2>Create an Account</h2>
+            <form class="signup-form" action="dashboard.html" method="get">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <button type="submit" class="signup-btn">Sign Up</button>
+            </form>
+            <div class="login-link">
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
